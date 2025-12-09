@@ -1,0 +1,11 @@
+TicketId,Project,Question,Answer
+1001,CRM Suite,Cannot log into the CRM; getting 'invalid credentials' even though my password is correct.,"We reset the user's password, cleared browser cache, and verified SSO token freshness. Issue resolved."
+1002,Billing Portal,Invoice PDF fails to download; the button spins indefinitely.,Enabled CDN path for PDF endpoint and added a timeout fallback. Confirmed downloads work after fix.
+1003,Mobile App,App crashes when opening notifications on Android 14.,Patched NotificationManager usage and added null checks. Released hotfix v3.2.1; crash no longer reproduces.
+1004,Data Platform,Scheduled ETL job did not run last night; data is stale in the dashboard.,"Restarted Airflow scheduler, re-ran backfill, and added alerting on DAG failures. Data is now up to date."
+1005,Helpdesk,Password reset emails are not being delivered to users.,DKIM record was misconfigured. Fixed DNS records and retried the mail queue. Delivery confirmed.
+1006,E‑Commerce,Checkout page shows 'payment declined' for valid cards after the Black Friday rollout.,"Rolled back payment gateway config change, re-enabled 3DS fallback routing. Decline rate returned to normal."
+1007,HR Portal,Employees cannot upload documents; the upload fails with a 413 error.,Increased Nginx client_max_body_size to 25MB and updated backend limit. Uploads succeed now.
+1008,Analytics,Dashboard filters reset after refresh; users lose their selections.,Implemented URL-based filter persistence and localStorage fallback. Selections now survive refresh.
+1009,Support Chat,Chat transcripts are missing agent replies for some conversations.,Fixed a race condition in transcript exporter and reprocessed affected chats. Transcripts now complete.
+1010,CI/CD,Builds intermittently fail with 'docker pull rate limit exceeded'.,Configured a private registry mirror and added build caching. Intermittent pull failures eliminated.
